@@ -2,6 +2,8 @@
 import JSONLab from './components/JSONLab.vue'
 import BHeader from './components/BHeader.vue'
 import LibraryRegistrationForm from './views/HomeView.vue'
+
+
 </script>
 
 <template>
@@ -13,6 +15,7 @@ import LibraryRegistrationForm from './views/HomeView.vue'
     <!--LibraryRegistrationForm /-->
     <!-- <JSONLab /> -->
     <router-view></router-view>
+ 
   </main>
 </template>
 
