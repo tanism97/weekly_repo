@@ -4,34 +4,29 @@ import axios from 'axios';
 export default{
     data (){
         return{  
-            bookNumber:null,
+            jsondata: null,
             error:null
         }
     },
+    mounted(){this.getBookNumber()}
+    ,
     methods: {
         async getBookNumber() {
-            try{
-                const response = await axios.get('https://countbooks-r4ja4awxoq-uc.a.run.app')
-                this.bookNumber = response.data.count
-                this.error = null
-      
-    } catch(error){
-        this.error = error
-        this.bookNumber = null
+            try {
+      const response = await axios.get('https://countbooks-r4ja4awxoq-uc.a.run.app');
+      this.jsondata = response.data;
+      this.error = null;
+    } catch (error) {
+      console.error('Error fetching book count:', error);
+      this.error = error;
+      this.count = null;
     }
         }
     }
 }
 </script>
 <template>
-    <h1>Book Counter</h1>
-    <button @click="getBookNumber">Get book number</button>
-    <p v-if="bookNumber !== null">
-        Total number of books: {{ bookNumber }}
-    </p>
-    <p v-if="error">
-        {{ error }}
-    </p>
+    <pre>{{ jsondata }}</pre>
    
 
 </template>

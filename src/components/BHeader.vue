@@ -21,6 +21,12 @@
         <li class="nav-item">
           <router-link to="/AddBook" class="nav-link" active-class="active">AddBook</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="/Weatherview" class="nav-link" active-class="active">Weatherview</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to="/CountBookApi" class="nav-link" active-class="active">CountBookApi</router-link>
+        </li>
       </ul>
     </header>
   </div>
