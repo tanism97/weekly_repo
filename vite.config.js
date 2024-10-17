@@ -3,8 +3,13 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueDevTools from 'vite-plugin-vue-devtools';
 
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/<repository-name>/'
-    : '/'
-}
+
+export default defineConfig({
+  plugins: [vue(), vueDevTools()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  base: process.env.NODE_ENV === 'production' ? '/weekly_repo/' : '/',
+});
